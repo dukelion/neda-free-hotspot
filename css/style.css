@@ -1,0 +1,364 @@
+.login_form .link {
+    background: #f07d22;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+    padding: 10px;
+}
+
+.login_form .button {
+    margin-top: 15px;
+    text-align: center;
+}
+
+body {
+    background: #1c1c1c;
+    color: #fff;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header {
+    height: 60px;
+    margin-top: 70px;
+}
+
+.header .screenc {
+    margin-top: -50px;
+}
+
+.content {
+    background: url(../images/layout_grid.png) 50% 0 no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 769px;
+}
+
+.layout_grid {
+    width: 100%;
+    position: absolute;
+}
+
+.workspace {
+    margin-top: 100px;
+}
+
+.menu {
+    background: url(../images/menu_background.png) no-repeat;
+    width: 300px;
+    height: 300px;
+    margin-left: -20px;
+}
+
+.menu ul {
+    width: 140px;
+    margin-left: 80px;
+    padding-top: 40px;
+}
+
+.menu ul li {
+    padding: 6px 0;
+    border-bottom: 2px solid #b4601d;
+}
+
+.menu ul li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #b4601d;
+}
+
+.login_form {
+    background: url(../images/login_form_background.png) no-repeat;
+    width: 542px;
+    height: 212px;
+    margin-top: 40px;
+    text-align: left;
+    margin: 20px auto 0;
+    padding-bottom: 70px;
+}
+
+.login_form .left {
+    display: inline-block;
+    vertical-align: top;
+    margin: 55px 0 0 85px;
+}
+
+.login_form .left .input {
+    margin-bottom: 10px;
+}
+
+.login_form .left div.chpasswordform {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 2px;
+    margin-top: 50px;
+}
+
+.login_form .left .chpassword input {
+    margin-bottom: 0px;
+    line-height: 18px;
+    height: 30px;
+}
+
+.login_form .left input[type="text"] {
+    background: #000;
+    width: 235px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #fff;
+}
+
+.login_form .left input[type="password"] {
+    background: #000;
+    width: 235px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #fff;
+}
+
+.login_form .left input[type="text"]:focus {
+    border-color: #fff;
+}
+
+.login_form .right {
+    display: inline-block;
+    vertical-align: top;
+    margin: 85px 0 0 25px;
+}
+
+.login_form .right input[type="submit"] {
+    background: #f07d22;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+}
+
+.login_form .narrow input[type="submit"] {
+    background: #f07d22;
+    width: 105px;
+    height: 5px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+}
+
+.bottom_block {
+    background: url(../images/bottom_block_background.png) no-repeat;
+    width: 455px;
+    height: 122px;
+    margin: 40px 0 0 50px
+}
+
+.bottom_block .paypal, .bottom_block .authorizenet {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0 0 30px;
+}
+
+.bottom_block .paypal img {
+    margin-top: 5px;
+}
+
+.bottom_block .authorizenet img {
+    margin: -6px 10px 0 10px;
+}
+
+.bottom_block .authorizenet {
+    margin-left: 50px;
+}
+
+.bottom_block .signin_title {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.bottom_info {
+    margin: 10px 0 0 50px;
+}
+
+.bottom_info .note_ico {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bottom_info .text {
+    display: inline-block;
+    vertical-align: top;
+    margin: -5px 0 0 10px;
+    color: #644e3c;
+}
+
+.bottom_info .text p {
+    margin: 0;
+}
+
+/* ==================================== WELCOME ==================================== */
+.login_workspace {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.row.header h2 {
+    text-align: center;
+}
+
+.plate {
+    background: url(../images/plate_background.png) 0 bottom no-repeat;
+    background-size: contain;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.plate .left, .plate .right {
+    background: rgba(180, 95, 30, 0.5);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 100px;
+    margin-right: 50px;
+    padding: 15px;
+}
+
+.plate .left form, .plate .right form {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.plate .right {
+    margin-right: 0;
+    margin-left: 50px;
+}
+
+.plate .left input[type="button"], .plate .right input[type="button"] {
+    background: #f07d22;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+}
+
+.plate .left input[type="submit"], .plate .right input[type="submit"] {
+    background: #f07d22;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+}
+
+.plate .center {
+    width: 240px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.plate .center .message_background {
+    background: url(../images/menu_background.png) 0 bottom no-repeat;
+    width: 300px;
+    height: 300px;
+    margin-left: -20px;
+}
+
+.plate .center .message {
+    width: 200px;
+    margin-left: 45px;
+    padding-top: 50px;
+    text-align: center;
+
+}
+
+.footer_links {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer_links a {
+    margin: 0 25px;
+    color: #6b6b6b;
+}
+
+.footer_links a:hover {
+    color: #b4601d;
+}
+
+/* ==================================== BOARDWALK LOGIN ==================================== */
+.loadbar_block {
+}
+
+.loadbar_block .text {
+    font-size: 18px;
+}
+
+/* ==================================== POPUP ==================================== */
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+.popup .fog {
+    background: rgba(0, 0, 0, 0.5);
+    width: 5000px;
+    height: 5000px;
+}
+
+.popup .popup_content {
+    width: 485px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 150px 0 0 -243px;
+    text-align: center;
+}
+
+.popup .popup_content .window {
+    background: url(../images/popup_window.png) no-repeat;
+    height: 237px;
+}
+
+.popup .popup_content .window .text {
+    padding-top: 35px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.popup .popup_content .window .watch {
+    width: 117px;
+    height: 117px;
+    margin: 15px auto 0;
+}
+
+.popup .popup_content .button {
+    background: rgba(68, 7, 4, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px auto 0;
+    padding: 15px;
+}
+
+.popup .popup_content .button input[type="button"] {
+    background: #dd0402;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #520402;
+    border-radius: 0;
+    color: #000;
+}
