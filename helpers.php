@@ -18,6 +18,8 @@ function dbconnect()
         trigger_error("Could not connect to database " . mysqli_error($db));
         fURL::redirect("error.php");
     }
+    $query = "SET NAMES utf8";
+    mysqli_query($db,$query);
     return $db;
 }
 
