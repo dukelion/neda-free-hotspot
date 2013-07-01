@@ -17,17 +17,21 @@
                                     <div class=message>
                                         <div class="text">
                                             <p>For inquiries and customer assistance,<br> please contact us at:</p>
-
-                                            <p>Email: <br>ifone-neda@ifoneinc.com</p>
-
+                                            <p>Email: <nobr>ifone-neda@ifoneinc.com</nobr></p>
                                             <p>Mobile: AWCC 0702506077 / Roshan 0798679599</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="right">
-                                <form action="info.php"
-                                "><input type="submit" value="INFO"></form></div>
+                                {if $offline}
+                                    <form action="login.php"><input type="submit" value="Log In"></form>
+                                {else}
+                                    <form action="info.php"><input type="submit" value="INFO"></form>
+                                {/if}
+
+                            </div>
                         </div>
                     </div>
 {include file="foot.tpl"}

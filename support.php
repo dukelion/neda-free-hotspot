@@ -9,4 +9,7 @@
 
 include_once dirname(__FILE__) . "/config.php";
 
+$offline = is_null(fSession::get('badgeid'));
+
+$page->assign("offline",$offline);
 $page->display("support.tpl");

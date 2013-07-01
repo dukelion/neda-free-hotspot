@@ -13,6 +13,11 @@
     text-align: center;
 }
 
+.login_form .message {
+    text-align: center;
+    margin-top: 50px;
+}
+
 body {
     background: #1c1c1c;
     color: #fff;

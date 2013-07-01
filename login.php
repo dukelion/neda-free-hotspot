@@ -28,6 +28,7 @@ $limit = ($onlineCount > ONLINE_LIMIT);
 
 $page->assign('count', $onlineCount);
 $page->assign('limit', $limit);
+$page->assign('maxcount',ONLINE_LIMIT);
 $page->assign('fail', $fail);
 $page->assign('badgeId', $badgeId);
 
