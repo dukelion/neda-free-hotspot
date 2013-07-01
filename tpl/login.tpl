@@ -35,6 +35,8 @@
                         {if $fail}
                             <div>Password is wrong. Please try again.</div>
                         {/if}
+                        <div>To register an account visit Ifone-Neda office<br>
+                        at the corner of Bronco and Motorpool road</div>
                     </div>
                     <div class="span12" style="padding-bottom: 77px;"></div>
 {include file="foot.tpl"}
