@@ -18,8 +18,8 @@ if (!$badgeId) { //is not logged in
     trigger_error("Unknow badgeid logout");
     exit(0);
 } else {
-    $ticket = getTicket($db, $badgeId);
-    if (expireTicket($db, $ticket{'ticketpass'})) {
+    $ticket = getTicket($badgeId);
+    if (expireTicket($ticket{'ticketpass'})) {
         fSession::destroy();
     } else {
         fURL::redirect("info.php");
