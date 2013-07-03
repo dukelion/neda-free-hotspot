@@ -18,6 +18,24 @@
     margin-top: 50px;
 }
 
+.register_form {
+    text-align: right;
+    float: right;
+    vertical-align: middle;
+}
+
+.register_form input {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.register_form .label {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 body {
     background: #1c1c1c;
     color: #fff;

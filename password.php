@@ -15,13 +15,20 @@ $password = fRequest::get("password");
 $notify = false;
 
 $authorizedSession = false;
-$authorizedRequest = false;
 
 $sessionBadgeId = fSession::get('badgeid');
 //check if already logged in
 if ($sessionBadgeId) {
     $authorizedSession = true;
 }
+
+//validate input
+
+//re-check old password
+
+//save new password
+
+
 
 
 $page->display("password.tpl");
