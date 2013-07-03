@@ -29,11 +29,35 @@
     margin-bottom: auto;
 }
 
-
 .register_form .label {
     vertical-align: middle;
     display: inline-block;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
+    color: #fff;
+    background:rgba(221, 221, 221, 0);
+}
+
+.register_form .label div {
+    display: inline;
+}
+.register_form .label div.red {
+    display: inline;
+    color: red;
+}
+
+.register_form .submit {
+    background: rgba(180, 95, 30, 0.5);
+    display: inline-block;
+    vertical-align: middle;
+    background: #f07d22;
+    width: 105px;
+    height: 35px;
+    border: 2px solid #b4601d;
+    border-radius: 0;
+    color: #000;
+    -webkit-appearance: button;
+    cursor: pointer;
+    margin-right: 50px;
 }
 
 body {

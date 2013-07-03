@@ -166,3 +166,15 @@ function getUser($db, $badgeId)
         return $row;
     }
 }
+
+function userExists ($db,$badgeId){
+    $query = "select count(*) from users where badgeid = '".mysqli_real_escape_string($db, $badgeId) . "'";
+    $res = mysqli_query($db, $query);
+    if (!$res) {
+        trigger_error("Could not run query: " . mysqli_error($db));
+        fURL::redirect("error.php");
+    } else {
+        $row = mysqli_fetch_assoc($res);
+        if ($row{'count'} > 0) {return true;} else {return false;}
+    }
+}
