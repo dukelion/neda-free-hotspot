@@ -20,14 +20,14 @@ if (!$badgeId) { //is not logged in
     exit(0);
 }
 
-$ticket = getTicket($db, $badgeId);
+$ticket = getTicket($badgeId);
 if ($ticket) {
     $expirets = $ticket{'expirets'};
 } else {
     fURL::redirect("login.php");
     exit(0);
 }
-$user = getUser($db, $badgeId);
+$user = getUser($badgeId);
 
 $ticketpass = $ticket{'ticketpass'};
 

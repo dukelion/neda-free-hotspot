@@ -7,7 +7,7 @@ $db = dbconnect();
 
 $activeBadgeId = fSession::get("badgeid");
 if ($activeBadgeId) {
-    $ticket = getTicket($db, $activeBadgeId);
+    $ticket = getTicket($activeBadgeId);
     if (isset($ticket) && isTicketOnline($ticket{'ticketpass'})) {
         fURL::redirect("info.php");
     } else {
@@ -23,7 +23,7 @@ $badgeId = $savedBadgeId ? $savedBadgeId : $requestBadgeId;
 
 $fail = fRequest::check("wrong");
 
-$onlineCount = getActiveTicketsCount($db);
+$onlineCount = getActiveTicketsCount();
 $limit = ($onlineCount > ONLINE_LIMIT);
 
 $page->assign('count', $onlineCount);

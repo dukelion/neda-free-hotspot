@@ -39,19 +39,24 @@ if (fRequest::isPost()){
     $validator->addRequiredFields("password");
     $validator->addRequiredFields("password2");
     if ($email) { $validator->addEmailFields("email"); };
-    $validator->addCallbackRule('badgeid',userExists($db,$fields['badgeid']),"already registered");
+    if (fRequest::check("password")) { $validator->addValidValuesRule("password2",fRequest::get("password")); };
+
+    $validator->addCallbackRule('badgeid',"userExists","already registered");
 
     $validator->overrideFieldName(array(
         'badgeid'       => 'ISAF Badge ID#',
         'password' => 'Password',
-        'password2' => 'Retype Password'
+        'password2' => 'Retype password'
     ));
     $validator->addStringReplacement('Please enter a value', ' required');
     $validator->addStringReplacement('Please enter an email address in the form name@example.com',' address invalid');
+    $validator->addStringReplacement('Please choose from one of the following:',' not match');
     $message = $validator->validate(true);
 
 
-//store to database
+if (is_null($message)){
+    trigger_error("it's ok saving user:" . $fields);
+}
 
 //send activation email
 

@@ -11,7 +11,7 @@ require_once dirname(__FILE__) . "/config.php";
 
 function dbconnect()
 {
-    $db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+    $db = mysqli_connect("p:".DBHOST, DBUSER, DBPASS, DBNAME);
 
     if (mysqli_connect_errno($db)) {
         //database connection failed
@@ -23,9 +23,10 @@ function dbconnect()
     return $db;
 }
 
-function TicketExists($db, $badgeid)
+function TicketExists($badgeid)
 {
-    $query = sprintf("select id from ticket where badgeid = '%s' and expirets > unix_timestamp()", mysqli_real_escape_string($db, $badgeid));
+    $db = dbconnect();
+    $query = sprintf("select badgeid from ticket where badgeid = '%s' and expirets > unix_timestamp()", mysqli_real_escape_string($db, $badgeid));
     $res = mysqli_query($db, $query);
     if (!$res) {
         trigger_error("Could not run query: " . mysqli_error($db));
@@ -40,8 +41,9 @@ function TicketExists($db, $badgeid)
 
 ;
 
-function getTicket($db, $badgeid)
+function getTicket($badgeid)
 {
+    $db = dbconnect();
     $query = sprintf("select ts,expirets,ticketpass from tickets where badgeid = '%s' and expirets > unix_timestamp()", mysqli_real_escape_string($db, $badgeid));
     $res = mysqli_query($db, $query);
     if (!$res) {
@@ -54,8 +56,9 @@ function getTicket($db, $badgeid)
     mysqli_free_result($res);
 }
 
-function saveTicket($db, $badgeid, $ticketpass, $timestamp, $expirets)
+function saveTicket($badgeid, $ticketpass, $timestamp, $expirets)
 {
+    $db = dbconnect();
     $badgeid = mysqli_real_escape_string($db, $badgeid);
     $ticketpass = mysqli_real_escape_string($db, $ticketpass);
 
@@ -70,8 +73,9 @@ function saveTicket($db, $badgeid, $ticketpass, $timestamp, $expirets)
 }
 
 
-function getActiveTicketsCount($db)
+function getActiveTicketsCount()
 {
+    $db = dbconnect();
     $query = sprintf("select count(*) as count from tickets where expirets > unix_timestamp()");
     $res = mysqli_query($db, $query);
     if (!$res) {
@@ -113,8 +117,9 @@ function createTicket($badgeid, $expirets)
 
 }
 
-function expireTicket($db, $ticket)
+function expireTicket($ticket)
 {
+    $db = dbconnect();
     $time = time();
     $expirets = $time - $time % 60;
     $expiretime = strftime("%Y%m%d%H%M", $expirets);
@@ -154,8 +159,9 @@ function isTicketOnline($ticket)
     return $viewxml->xpath("//Accounts/Account/Loggedin", true)->getText();
 }
 
-function getUser($db, $badgeId)
+function getUser($badgeId)
 {
+    $db = dbconnect();
     $query = "select id, fullname, ctime, division, password from users where badgeid = '" . mysqli_real_escape_string($db, $badgeId) . "'";
     $res = mysqli_query($db, $query);
     if (!$res) {
@@ -167,7 +173,8 @@ function getUser($db, $badgeId)
     }
 }
 
-function userExists ($db,$badgeId){
+function userExists ($badgeId){
+    $db = dbconnect();
     $query = "select count(*) from users where badgeid = '".mysqli_real_escape_string($db, $badgeId) . "'";
     $res = mysqli_query($db, $query);
     if (!$res) {

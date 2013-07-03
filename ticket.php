@@ -27,7 +27,7 @@ $password = fRequest::get("password");
 $notify = false;
 
 if (!is_null($requestBadgeId)) {
-    $user = getUser($db, $requestBadgeId);
+    $user = getUser($requestBadgeId);
     if (!$authorizedSession and !is_null($password) and !is_null($user)) {
         if ($user{'password'} != md5($password)) {
             //wrong password
@@ -51,7 +51,7 @@ if ($authorizedRequest) {
 //all authorization checks finished
 if (isset($badgeId)) {
     $alreadyOnline = false;
-    $ticket = getTicket($db, $badgeId);
+    $ticket = getTicket($badgeId);
     if (!is_null($ticket)) {
         $alreadyOnline = isTicketOnline($ticket{'ticketpass'});
     }
@@ -59,10 +59,10 @@ if (isset($badgeId)) {
         fURL::redirect("info.php");
     } else {
         // authorized and not online
-        $onlineCount = getActiveTicketsCount($db);
+        $onlineCount = getActiveTicketsCount();
         $limit = true;
         if ($onlineCount < ONLINE_LIMIT) {
-            $ticket = getTicket($db, $badgeId);
+            $ticket = getTicket($badgeId);
             $ticket = $ticket{'ticketpass'};
             if (!$ticket) {
                 $timestamp = time();
@@ -74,7 +74,7 @@ if (isset($badgeId)) {
                     fURL::redirect("error.php");
                     exit(0);
                 }
-                saveTicket($db, $badgeId, $ticket, $timestamp, $expirets);
+                saveTicket($badgeId, $ticket, $timestamp, $expirets);
             };
             $limit = false;
         } else {
